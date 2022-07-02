@@ -14,6 +14,7 @@
   width: 100%;
   height: 60px;
   background: #293165;
+  border-bottom: 2px solid #5a61b9;
 }
 
 .container {
@@ -54,6 +55,44 @@
 .header-money, .header-currency {
   font-size: 18px;
   color: #fff;
+}
+
+/*---- Item ----*/
+.item-list {
+  padding-top: 60px;
+  min-height: 100vh;
+  background: #293165;
+}
+
+.list-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 25px;
+}
+
+/*---- Card ----*/
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px;
+  background: #fff;
+  flex: 0 0 30%;
+  border-radius: 15px;
+}
+
+.card-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.line-item {
+  height: 3px;
+  width: 100%;
+  background: #5a61b9;
 }
 
 /*# sourceMappingURL=index.css.map */
