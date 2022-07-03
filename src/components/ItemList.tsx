@@ -4,7 +4,7 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 
 const ItemList:FC = () => {
 
-    const state = useTypedSelector(item => item.basket.data)
+    const state = useTypedSelector(item => item.data.data)
 
     return (
         <div className='item-list'>

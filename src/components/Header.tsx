@@ -1,16 +1,26 @@
-import React, {FC} from 'react';
+import React, {FC, useMemo, useState} from 'react';
 import MyButton from "./UI/button/MyButton";
+import {useTypedSelector} from "../hooks/useTypedSelector";
+import MyModal from "./UI/modal/MyModal";
+
 
 interface headerProps {
     logo: string
 }
 
 const Header:FC<headerProps> = (props) => {
-
+    const state = useTypedSelector(item => item.basket.basket)
+    const [modal, setModal] = useState<boolean>(false)
     const openBasket = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault()
-        console.log('click function: openBasket')
+        setModal(true)
     }
+
+    const allPrice = useMemo(() => {
+        return state.reduce((total:any, i:any) => {
+            return total + i.props.price
+        }, 0)
+    }, [state])
 
     return (
         <div className='header'>
@@ -26,13 +36,17 @@ const Header:FC<headerProps> = (props) => {
                         </MyButton>
 
                         <div className='header-basket'>
-                            <div className='header-money'>0</div>
+                            <div className='header-money'>{allPrice}</div>
                             <div className='header-currency'>UAH</div>
                         </div>
 
                     </div>
                 </div>
             </div>
+
+            <MyModal visible={modal} setVisible={setModal}>
+                asdsad
+            </MyModal>
         </div>
     );
 };

@@ -1,7 +1,9 @@
 import {combineReducers, createStore} from "redux";
-import {basketReducer} from "./basketReducer";
+import {dataReducer} from "./reducers/dataReducer";
+import {basketReducer} from "./reducers/basketReducer";
 
 const rootReducer = combineReducers({
+    data: dataReducer,
     basket: basketReducer
 })
 
